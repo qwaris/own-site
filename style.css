@@ -1,0 +1,36 @@
+body{
+    background-color: #121212
+}
+
+
+
+.head{
+    width: 500px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    border: 3px solid white ;
+    border-radius: 50px ;
+    margin-top: 20px;
+    
+}
+
+.logo{
+    width: 35px;
+    height: auto;
+    display: block;
+    margin:auto;
+    
+}
+
+.nav{
+   
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s, opacity 0.3s;
+}
+
+.scrolled{
+
+    opacity: 1;
+}
