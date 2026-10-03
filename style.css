@@ -5,29 +5,28 @@ body{
 
 
 .head{
-    width: 300px;
+    width: 500px;
     height: 40px;
-    display: block;
+    display: flex;
+    justify-content: space-between; /*прижимает крайние елементы к краю  остальные равномерно... */
+    align-items: center; /*раставляет по центру верх-низ*/
+    padding: 0 29px; /*отступ по бокам*/
     margin: 20px auto 0;
     border-bottom: 1px solid white ;
-    transition: width 0.5s, border 0.5s, border-radius 0.5s ;
-   
-    
+    box-sizing: border-box;
 }
 
-.logo{
-    width: 35px;
-    height: auto;
-    display: block;
-    margin:auto;
-    
+.left-n, .right-n{
+    display: flex;
+    gap: 44px; /*ровномерно распределил ссылки*/
+    align-items: center;
 }
 
-.nav{
-   
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s, opacity 0.3s;
+.head a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: Orbitron, sans-serif;
 }
 
 .head.scrolled{
@@ -36,3 +35,16 @@ body{
     border: 1px solid white;
     border-radius: 50px;
 }
+
+.logo{
+    width: 35px;
+    height: auto;
+    display: block;
+    align-self: center;
+    
+    
+}
+
+
+
+
