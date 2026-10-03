@@ -1,25 +1,65 @@
 body{
-    background-color: #121212
+    background-color: #121212;
+    
+}
+
+header {
+    position: fixed;   /* «прибить» шапку к окну: при скролле она не уезжает вверх вместе со страницей */
+    top: 0;            /* прижать к верхнему краю окна */
+    left: 0;           /* растянуть от левого края... */
+    right: 0;          /* ...до правого, то есть на всю ширину окна */
+    z-index: 100;      /* порядок наложения: чем больше число, тем выше слой. Шапка будет поверх контента */
+}
+
+.full {
+    height: 200vh;               /* vh = процент высоты экрана; 200vh = два экрана. Нужен только чтобы появился скролл */
 }
 
 
-
 .head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 300px;
+    height: 40px;
+    margin: 20px auto 0 ;
+    padding: 29px;
+    border: 1px solid transparent; /* кароче делаем что бы нигде видно не было ток внизу */
+    border-bottom-color: white ;
+    border-radius: 0 ;
+    background-color: #121212 0.8;
+     backdrop-filter: blur(5px); 
+
+    transition:   /* плавная анимация */
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    border-color 0.5s ease;
+
+
+}
+
+.head.scrolled{
     width: 500px;
     height: 40px;
-    display: flex;
-    justify-content: space-between; /*прижимает крайние елементы к краю  остальные равномерно... */
-    align-items: center; /*раставляет по центру верх-низ*/
-    padding: 0 29px; /*отступ по бокам*/
-    margin: 20px auto 0;
-    border-bottom: 1px solid white ;
-    box-sizing: border-box;
+    border-color:white ;
+    border-radius: 30px;
+
+
 }
 
 .left-n, .right-n{
     display: flex;
+    flex: 1;
+    min-width: 0;          /* группы всегда делят место поровну, логотип не прыгает */
     gap: 44px; /*ровномерно распределил ссылки*/
     align-items: center;
+}
+
+.right-n{
+    justify-content: flex-end;
+    gap: 63px;
 }
 
 .head a {
@@ -27,24 +67,148 @@ body{
     text-decoration: none;
     font-size: 12px;
     font-family: Orbitron, sans-serif;
+
+    opacity: 0;
+    pointer-events: none; /* Нельзя нажать */
+    transition: opacity 0.3s ease, transform 0.5s ease;
+
 }
 
-.head.scrolled{
+.left-n a  { transform: translateX(70px); }  /* сдвинуть левые ссылки на 70px ВПРАВО (к центру) */
+.right-n a { transform: translateX(-70px); }
 
-    width: 500px;
-    border: 1px solid white;
-    border-radius: 50px;
+.head.scrolled a {
+    opacity: 1;               /* становятся видимыми */
+    pointer-events: auto;     /* по ним снова можно кликать */
+    transform: translateX(0); /* возвращаются на своё место: левые едут влево, правые вправо, то есть «от центра к краям» */
+    transition-delay: 0.15s;  /* подождать 0.15 с перед началом анимации, чтобы шапка успела немного расшириться */
 }
+
+
+
+
 
 .logo{
     width: 35px;
     height: auto;
+    flex: 0 0  35px;
+    margin: 0 0 8px -10px;
+    transition: transform 0.5s ease; 
+}
+
+.head.scrolled .logo {
+    transform: translateX(10px);   /* смещение логотипа при скролле */
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+.under h1,h3,p{
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+
+}
+
+#idh{
+    font-size: 50px;
+     
+  background: linear-gradient(345deg, #000000, #ffffff);        /* 1. Задаем сам градиент (например, от фиолетового к розовому) */
+  
+  -webkit-background-clip: text;       /* 2. Обрезаем фон так, чтобы он остался только внутри букв */
+  background-clip: text;
+  
+
+  -webkit-text-fill-color: transparent;          /* 3. Делаем сам текст прозрачным, чтобы сквозь него был виден фон */
+  color: transparent; /* Резервный вариант */
+
+
+}
+
+#id3{
+    font-size: 26px;
+    color: #787878;
+}
+
+.text{
     display: block;
-    align-self: center;
+    box-sizing: border-box;
+    margin-top: 125px;
+    margin-left: 254px;
+}
+
+.progress-wrap{
+    display: inline-block;
     
     
+    width: 381px;
+    height: 45px;
+    
+    margin-left: 278px;
+    text-align: center;
+    
+}
+
+.tst{
+    display: block;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.process{
+    border: 1px white solid;
+    width: 100%;
+    height: 45px;
+    border-radius: 21px;
+    box-sizing: border-box;
+    overflow: hidden;        /* если выходит за рамки - убирает*/
+}
+
+.zaliv{
+    background-color: white;
+    width: 48%;
+    height: 100%;
+    border-radius: 21px;
+    justify-content: flex-end;
+    display: flex;               /* центрируем проценты */
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.tst{
+    color: white;
+    font-size: 20px;
+
+}
+
+.proc{
+    color: white;
+    margin-left: 230px;
+}
+
+.text,.progress{
+    display: inline-block;
+}
+
+.polosa{
+    color: white;
+    font-family: 'Jacquarda Bastarda 9', sans-serif;
+    font-size: 28px;
+    display: block;
+    text-align: right;   /* прижимает к правому краю плашки */
+    margin: 0 0 70px 0;
+}
+
+.under{
+    padding-top: 100px ;
 }
 
 
 
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
+
+.poloska{
+    border-top: 1px white solid ;
+    margin-top: 125px;
+   
+}
