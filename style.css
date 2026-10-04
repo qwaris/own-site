@@ -238,3 +238,25 @@ header {
     color: white;
 }
 
+
+
+.html{
+    border: 1px white solid;
+    width: 318px;
+    height: 45px;
+    border-radius: 21px;
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.zaliv-html{
+    background-color: #FF8336;
+    width: 60%;
+    height: 100%;
+    border-radius: 21px;
+    justify-content: flex-end;
+    display: flex;               /* центрируем проценты */
+    align-items: center;
+    justify-content: center;
+}
+
