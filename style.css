@@ -212,3 +212,29 @@ header {
     margin-top: 125px;
 }
 
+
+
+.h1-my-prog{
+    font-size: 38px;
+    font-family: Montserrat, sans-serif;
+}
+
+.h2-html{
+    font-size: 32px;
+}
+
+.p-html{
+    font-size: 20px;
+}
+
+#p-html,.proc-html{
+    color: #787878;
+    font-family: Montserrat, sans-serif;
+}
+
+.h1-my-prog,.h2-html,.p-html,.progress-txt{
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
