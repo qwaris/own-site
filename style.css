@@ -11,6 +11,14 @@ header {
     z-index: 100;      /* порядок наложения: чем больше число, тем выше слой. Шапка будет поверх контента */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.h1-my-prog,.ach {
+    scroll-margin-top: 120px;   /* оставить 120px свободного места сверху при переходе по ссылке */
+}
+
 .full {
     height: 200vh;               /* vh = процент высоты экрана; 200vh = два экрана. Нужен только чтобы появился скролл */
 }
@@ -40,7 +48,8 @@ header {
 
 }
 
-.head.scrolled{
+.head.scrolled,
+.head:hover {
     width: 500px;
     height: 40px;
     border-color:white ;
@@ -57,8 +66,12 @@ header {
     align-items: center;
 }
 
+.left-n{
+    justify-content: center;
+}
+
 .right-n{
-    justify-content: flex-end;
+    justify-content: center;
     gap: 63px;
 }
 
@@ -74,14 +87,20 @@ header {
 
 }
 
+.head a:hover {
+    text-shadow: 0 0 6px white, 0 0 14px white;
+    transition: opacity 0.3s ease, transform 0.5s ease, text-shadow 0.3s ease;
+}
+
 .left-n a  { transform: translateX(70px); }  /* сдвинуть левые ссылки на 70px ВПРАВО (к центру) */
 .right-n a { transform: translateX(-70px); }
 
-.head.scrolled a {
+.head.scrolled a,
+.head:hover a {
     opacity: 1;               /* становятся видимыми */
     pointer-events: auto;     /* по ним снова можно кликать */
     transform: translateX(0); /* возвращаются на своё место: левые едут влево, правые вправо, то есть «от центра к краям» */
-    transition-delay: 0.15s;  /* подождать 0.15 с перед началом анимации, чтобы шапка успела немного расшириться */
+    transition-delay: 0.05s;  /* подождать 0.15 с перед началом анимации, чтобы шапка успела немного расшириться */
 }
 
 
@@ -96,7 +115,8 @@ header {
     transition: transform 0.5s ease; 
 }
 
-.head.scrolled .logo {
+.head.scrolled .logo,
+.head:hover .logo{
     transform: translateX(10px);   /* смещение логотипа при скролле */
 }
 
@@ -354,4 +374,66 @@ main{
 .skills-left{
     margin-left: 100px;
     margin-top: 60px;
+}
+
+.proc-css{
+    margin-left: 160px;
+    color: #787878;
+    font-family: Montserrat, sans-serif;
+}
+
+
+
+
+
+.poloska2{
+    border-top: 1px white solid ;
+    margin-top: 125px;
+}
+
+
+.ach{
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    color: rgb(255, 156, 156);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.rixe-box{
+    width: 1000px;
+    display: flex;
+    margin-left: 300px;
+    
+}
+
+
+.txt-rize{
+    text-align: center;
+    color: white;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 30px;
+    justify-content: flex-start;
+}
+
+.img-rize{
+    margin-bottom: 30px;
+}
+
+.shine {
+    background: linear-gradient(90deg, #ffffff, #000000, #C77DFF, #ffffff);
+    background-size: 200% 100%;          /* градиент вдвое шире текста: есть что двигать */
+
+    -webkit-background-clip: text;       /* оставить фон только внутри букв */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* сделать сами буквы прозрачными, чтобы был виден фон */
+    color: transparent;                   /* запасной вариант */
+
+    animation: flow-text 4s linear infinite;
+}
+
+@keyframes flow-text {
+    to { background-position: 200% 0; }
 }
