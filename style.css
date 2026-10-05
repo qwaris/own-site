@@ -3,6 +3,27 @@ body{
     
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {            /* или обёртка вашего основного содержимого */
+    flex: 1;
+}
+
 header {
     position: fixed;   /* «прибить» шапку к окну: при скролле она не уезжает вверх вместе со страницей */
     top: 0;            /* прижать к верхнему краю окна */
@@ -219,7 +240,8 @@ html {
 }
 
 .under{
-    padding-top: 100px ;
+    padding-top: 50px ;
+    
 }
 
 
@@ -446,7 +468,7 @@ main{
 
 .tg-bots {
     width: 1158px;
-    margin: 225px auto 0;      /* по центру */
+    margin: 80px auto 0;      /* по центру */
     display: flex;
     flex-direction: column;    /* шапка сверху, карточки ниже */
 }
@@ -539,6 +561,81 @@ main{
     font-size: 35px;
     font-weight: 400;
     margin: 0;
+}
+
+
+
+
+
+
+
+.footer {
+    background-color: #000;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.footer-inner {
+    max-width: 1158px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;   /* три блока: слева, по центру, справа */
+    align-items: center;
+}
+
+/* ---------- левая колонка ---------- */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-link,
+.footer-phone {
+    color: #787878;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+/* ---------- центр ---------- */
+.footer-ecorp {
+    display: flex;
+    justify-content: center;
+}
+
+.ecorp-img {
+    width: 60px;
+    height: auto;
+}
+
+/* ---------- правый блок ---------- */
+.footer-robot {
+    display: flex;
+    align-items: flex-end;     /* XDXD по нижнему краю логотипа */
+    gap: 8px;
+}
+
+.robot-img {
+    width: 235px;
+    height: auto;
+}
+
+.xdxd {
+    color: #5a5a5a;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.footer{
+    margin-top: 100px;
 }
 
 
