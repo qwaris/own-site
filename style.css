@@ -423,7 +423,7 @@ main{
 }
 
 .shine {
-    background: linear-gradient(90deg, #ffffff, #000000, #C77DFF, #ffffff);
+    background: linear-gradient(90deg, #ffffff, #C77DFF, #ffffff);
     background-size: 200% 100%;          /* градиент вдвое шире текста: есть что двигать */
 
     -webkit-background-clip: text;       /* оставить фон только внутри букв */
